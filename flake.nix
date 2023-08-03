@@ -1,5 +1,4 @@
 {
-
 # Instructions:
 
 # To build with no intention of hacking the source code, do:
@@ -32,7 +31,7 @@
       program = builtins.toPath (pkgs.writeShellScript "sdkGL" ''
         export NIX_CONFIG="experimental-features = nix-command flakes"
         export PATH=$PATH:${pkgs.nixUnstable}/bin
-        nix run --impure  ${nixGL}#nixGLDefault -- nix run ${self}#x --command "freecad"
+        nix run --impure  ${nixGL}#nixGLDefault -- nix --impure run ${self}#x --command "freecad"
       '');
     };
     x = (pkgs.freecad.overrideAttrs (old: {
