@@ -17,10 +17,10 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixgl.url = "github:guibou/nixGL";
+    nixGL.url = "github:guibou/nixGL";
   };
 
-  outputs = { self, nixpkgs, nixgl }:
+  outputs = { self, nixpkgs, nixGL }:
   let
     pkgs = import nixpkgs {
       system = "x86_64-linux";
